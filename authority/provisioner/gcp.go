@@ -405,7 +405,6 @@ func (p *GCP) AuthorizeSSHSign(ctx context.Context, token string) ([]SignOption,
 	default:
 		return nil, errs.Unauthorized("gcp.AuthorizeSSHSign; invalid requested certType")
 	}
-
 }
 
 // authorizeHostSSHSign returns the list of SignOption for a Host SignSSH request.
