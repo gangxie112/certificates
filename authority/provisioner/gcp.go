@@ -391,45 +391,31 @@ func (p *GCP) AuthorizeSSHSign(ctx context.Context, token string) ([]SignOption,
 	if !p.ctl.Claimer.IsSSHCAEnabled() {
 		return nil, errs.Unauthorized("gcp.AuthorizeSSHSign; sshCA is disabled for gcp provisioner '%s'", p.GetName())
 	}
+	claims, err := p.authorizeToken(token)
+	if err != nil {
+		return nil, errs.Wrap(http.StatusInternalServerError, err, "gcp.AuthorizeSSHSign")
+	}
 
 	certType, hasCertType := CertTypeFromContext(ctx)
 	if !hasCertType {
 		certType = SSHHostCert
 	}
 
+	defaults, keyId, principals, ct, template := SignSSHOptions{}, "", []string{}, sshutil.HostCert, ""
+
 	switch certType {
 	case SSHHostCert:
-		return p.authorizeHostSSHSign(ctx, token)
+		defaults, keyId, principals, ct, template = p.genHostOptions(ctx, claims)
 	case SSHUserCert:
-		return p.authorizeUserSSHSign(ctx, token)
+		defaults, keyId, principals, ct, template = p.genUserOptions(ctx, claims)
 	default:
 		return nil, errs.Unauthorized("gcp.AuthorizeSSHSign; invalid requested certType")
 	}
-}
 
-// authorizeHostSSHSign returns the list of SignOption for a Host SignSSH request.
-func (p *GCP) authorizeHostSSHSign(_ context.Context, token string) ([]SignOption, error) {
-	claims, err := p.authorizeToken(token)
-	if err != nil {
-		return nil, errs.Wrap(http.StatusInternalServerError, err, "gcp.AuthorizeSSHSign")
-	}
-
-	ce := claims.Google.ComputeEngine
 	signOptions := []SignOption{}
 
-	// Enforce host certificate.
-	defaults := SignSSHOptions{
-		CertType: SSHHostCert,
-	}
-
-	// Validated principals.
-	principals := []string{
-		fmt.Sprintf("%s.c.%s.internal", ce.InstanceName, ce.ProjectID),
-		fmt.Sprintf("%s.%s.c.%s.internal", ce.InstanceName, ce.Zone, ce.ProjectID),
-	}
-
-	// Only enforce known principals if disable custom sans is true.
-	if p.DisableCustomSANs {
+	// Only enforce known principals if disable custom sans is true, or it is a user cert request
+	if p.DisableCustomSANs || certType == SSHUserCert {
 		defaults.Principals = principals
 	} else {
 		// Check that at least one principal is sent in the request.
@@ -439,12 +425,12 @@ func (p *GCP) authorizeHostSSHSign(_ context.Context, token string) ([]SignOptio
 	}
 
 	// Certificate templates.
-	data := sshutil.CreateTemplateData(sshutil.HostCert, ce.InstanceName, principals)
+	data := sshutil.CreateTemplateData(ct, keyId, principals)
 	if v, err := unsafeParseSigned(token); err == nil {
 		data.SetToken(v)
 	}
 
-	templateOptions, err := CustomSSHTemplateOptions(p.Options, data, sshutil.DefaultIIDTemplate)
+	templateOptions, err := CustomSSHTemplateOptions(p.Options, data, template)
 	if err != nil {
 		return nil, errs.Wrap(http.StatusInternalServerError, err, "gcp.AuthorizeSSHSign")
 	}
@@ -463,67 +449,34 @@ func (p *GCP) authorizeHostSSHSign(_ context.Context, token string) ([]SignOptio
 		// Require all the fields in the SSH certificate
 		&sshCertDefaultValidator{},
 		// Ensure that all principal names are allowed
-		newSSHNamePolicyValidator(p.ctl.getPolicy().getSSHHost(), nil),
+		newSSHNamePolicyValidator(p.ctl.getPolicy().getSSHHost(), p.ctl.getPolicy().getSSHUser()),
 		// Call webhooks
 		p.ctl.newWebhookController(
 			data,
 			linkedca.Webhook_SSH,
-			webhook.WithAuthorizationPrincipal(ce.InstanceID),
+			webhook.WithAuthorizationPrincipal(keyId),
 		),
 	), nil
 }
 
-// authorizeUserSSHSign returns the list of SignOption for a User SignSSH request.
-func (p *GCP) authorizeUserSSHSign(_ context.Context, token string) ([]SignOption, error) {
-	claims, err := p.authorizeToken(token)
-	if err != nil {
-		return nil, errs.Wrap(http.StatusInternalServerError, err, "gcp.AuthorizeSSHSign")
+func (p *GCP) genHostOptions(_ context.Context, claims *gcpPayload) (SignSSHOptions, string, []string, sshutil.CertType, string) {
+	ce := claims.Google.ComputeEngine
+	keyId := ce.InstanceName
+
+	principals := []string{
+		fmt.Sprintf("%s.c.%s.internal", ce.InstanceName, ce.ProjectID),
+		fmt.Sprintf("%s.%s.c.%s.internal", ce.InstanceName, ce.Zone, ce.ProjectID),
 	}
 
-	signOptions := []SignOption{}
+	return SignSSHOptions{CertType: SSHHostCert}, keyId, principals, sshutil.HostCert, sshutil.DefaultIIDTemplate
+}
 
-	// Validated principals.
+func (p *GCP) genUserOptions(_ context.Context, claims *gcpPayload) (SignSSHOptions, string, []string, sshutil.CertType, string) {
+	keyId := claims.Email
 	principals := []string{
 		SanitizeSSHUserPrincipal(claims.Email),
 		claims.Email,
 	}
 
-	// Enforce user certificate.
-	defaults := SignSSHOptions{
-		CertType:   SSHUserCert,
-		Principals: principals,
-	}
-
-	// Certificate templates.
-	data := sshutil.CreateTemplateData(sshutil.UserCert, claims.Email, principals)
-	if v, err := unsafeParseSigned(token); err == nil {
-		data.SetToken(v)
-	}
-
-	templateOptions, err := TemplateSSHOptions(p.Options, data)
-	if err != nil {
-		return nil, errs.Wrap(http.StatusInternalServerError, err, "gcp.AuthorizeSSHSign")
-	}
-	signOptions = append(signOptions, templateOptions)
-
-	return append(signOptions,
-		p,
-		// Validate user SignSSHOptions.
-		sshCertOptionsValidator(defaults),
-		// Set the validity bounds if not set.
-		&sshDefaultDuration{p.ctl.Claimer},
-		// Validate public key
-		&sshDefaultPublicKeyValidator{},
-		// Validate the validity period.
-		&sshCertValidityValidator{p.ctl.Claimer},
-		// Require all the fields in the SSH certificate
-		&sshCertDefaultValidator{},
-		// Ensure that all principal names are allowed
-		newSSHNamePolicyValidator(nil, p.ctl.getPolicy().getSSHUser()),
-		// Call webhooks
-		p.ctl.newWebhookController(
-			data,
-			linkedca.Webhook_SSH,
-		),
-	), nil
+	return SignSSHOptions{CertType: SSHUserCert}, keyId, principals, sshutil.UserCert, sshutil.DefaultTemplate
 }
