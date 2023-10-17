@@ -592,6 +592,7 @@ func TestGCP_AuthorizeSSHSign(t *testing.T) {
 	p1, err := generateGCP()
 	assert.FatalError(t, err)
 	p1.DisableCustomSANs = true
+	p1.EnableSSHCAUser = true
 
 	p2, err := generateGCP()
 	assert.FatalError(t, err)
@@ -604,6 +605,10 @@ func TestGCP_AuthorizeSSHSign(t *testing.T) {
 	p3.Claims = &Claims{EnableSSHCA: &disable}
 	p3.ctl.Claimer, err = NewClaimer(p3.Claims, globalProvisionerClaims)
 	assert.FatalError(t, err)
+
+	p4, err := generateGCP()
+	assert.FatalError(t, err)
+	p4.DisableSSHCAHost = true
 
 	t1, err := generateGCPToken(p1.ServiceAccounts[0],
 		"https://accounts.google.com", p1.GetID(),
@@ -679,6 +684,8 @@ func TestGCP_AuthorizeSSHSign(t *testing.T) {
 		{"fail-principal", p1, args{t1, SignSSHOptions{Principals: []string{"smallstep.com"}}, pub}, nil, http.StatusOK, false, true},
 		{"fail-extra-principal", p1, args{t1, SignSSHOptions{Principals: []string{"instance-name.c.project-id.internal", "instance-name.zone.c.project-id.internal", "smallstep.com"}}, pub}, nil, http.StatusOK, false, true},
 		{"fail-sshCA-disabled", p3, args{"foo", SignSSHOptions{}, pub}, expectedHostOptions, http.StatusUnauthorized, true, false},
+		{"fail-type-host", p4, args{"foo", SignSSHOptions{CertType: "host"}, pub}, nil, http.StatusUnauthorized, true, false},
+		{"fail-type-user", p4, args{"foo", SignSSHOptions{CertType: "host"}, pub}, nil, http.StatusUnauthorized, true, false},
 		{"fail-invalid-token", p1, args{"foo", SignSSHOptions{}, pub}, expectedHostOptions, http.StatusUnauthorized, true, false},
 	}
 	for _, tt := range tests {
