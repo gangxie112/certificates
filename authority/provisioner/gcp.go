@@ -405,7 +405,11 @@ func (p *GCP) AuthorizeSSHSign(ctx context.Context, token string) ([]SignOption,
 		return nil, errs.Wrap(http.StatusInternalServerError, err, "gcp.AuthorizeSSHSign")
 	}
 
-	defaults, keyID, principals, ct, template := SignSSHOptions{}, "", []string{}, sshutil.HostCert, ""
+	var principals []string
+	var keyID string
+	var defaults SignSSHOptions
+	var ct sshutil.CertType
+	var template string
 
 	switch certType {
 	case SSHHostCert:
