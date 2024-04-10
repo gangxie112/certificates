@@ -10,6 +10,7 @@ import (
 	"strings"
 
 	"github.com/pkg/errors"
+	kmsapi "go.step.sm/crypto/kms/apiv1"
 	"golang.org/x/crypto/ssh"
 
 	"github.com/smallstep/certificates/errs"
@@ -31,6 +32,31 @@ type Interface interface {
 	AuthorizeSSHRevoke(ctx context.Context, token string) error
 	AuthorizeSSHRenew(ctx context.Context, token string) (*ssh.Certificate, error)
 	AuthorizeSSHRekey(ctx context.Context, token string) (*ssh.Certificate, []SignOption, error)
+}
+
+// Disabled represents a disabled provisioner. Disabled provisioners are created
+// when the Init methods fails.
+type Disabled struct {
+	Interface
+	Reason error
+}
+
+// MarshalJSON returns the JSON encoding of the provisioner with the disabled
+// reason.
+func (p Disabled) MarshalJSON() ([]byte, error) {
+	provisionerJSON, err := json.Marshal(p.Interface)
+	if err != nil {
+		return nil, err
+	}
+	reasonJSON, err := json.Marshal(struct {
+		Disabled       bool   `json:"disabled"`
+		DisabledReason string `json:"disabledReason"`
+	}{true, p.Reason.Error()})
+	if err != nil {
+		return nil, err
+	}
+	reasonJSON[0] = ','
+	return append(provisionerJSON[:len(provisionerJSON)-1], reasonJSON...), nil
 }
 
 // ErrAllowTokenReuse is an error that is returned by provisioners that allows
@@ -206,6 +232,13 @@ type SSHKeys struct {
 	HostKeys []ssh.PublicKey
 }
 
+// SCEPKeyManager is a KMS interface that combines a KeyManager with a
+// Decrypter.
+type SCEPKeyManager interface {
+	kmsapi.KeyManager
+	kmsapi.Decrypter
+}
+
 // Config defines the default parameters used in the initialization of
 // provisioners.
 type Config struct {
@@ -226,6 +259,8 @@ type Config struct {
 	AuthorizeSSHRenewFunc AuthorizeSSHRenewFunc
 	// WebhookClient is an http client to use in webhook request
 	WebhookClient *http.Client
+	// SCEPKeyManager, if defined, is the interface used by SCEP provisioners.
+	SCEPKeyManager SCEPKeyManager
 }
 
 type provisioner struct {
