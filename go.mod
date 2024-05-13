@@ -1,6 +1,7 @@
 module github.com/smallstep/certificates
 
 go 1.21
+toolchain go1.22.2
 
 require (
 	cloud.google.com/go/longrunning v0.5.7
@@ -24,7 +25,7 @@ require (
 	github.com/prometheus/client_golang v1.19.1
 	github.com/rs/xid v1.5.0
 	github.com/sirupsen/logrus v1.9.3
-	github.com/slackhq/nebula v1.8.2
+	github.com/slackhq/nebula v1.9.0
 	github.com/smallstep/assert v0.0.0-20200723003110-82e2b9b3b262
 	github.com/smallstep/go-attestation v0.4.4-0.20240109183208-413678f90935
 	github.com/smallstep/nosql v0.6.1
@@ -40,7 +41,7 @@ require (
 	golang.org/x/net v0.25.0
 	google.golang.org/api v0.177.0
 	google.golang.org/grpc v1.63.2
-	google.golang.org/protobuf v1.34.0
+	google.golang.org/protobuf v1.34.1
 )
 
 require (
