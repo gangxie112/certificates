@@ -4,7 +4,7 @@ go 1.21
 toolchain go1.22.5
 
 require (
-	cloud.google.com/go/longrunning v0.6.0
+	cloud.google.com/go/longrunning v0.6.1
 	cloud.google.com/go/security v1.18.1
 	github.com/Masterminds/sprig/v3 v3.3.0
 	github.com/dgraph-io/badger v1.6.2
