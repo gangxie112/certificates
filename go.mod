@@ -5,7 +5,7 @@ toolchain go1.24.1
 
 require (
 	cloud.google.com/go/longrunning v0.6.7
-	cloud.google.com/go/security v1.18.4
+	cloud.google.com/go/security v1.18.5
 	github.com/Masterminds/sprig/v3 v3.3.0
 	github.com/dgraph-io/badger v1.6.2
 	github.com/dgraph-io/badger/v2 v2.2007.4
@@ -49,7 +49,7 @@ require (
 	cloud.google.com/go/auth v0.16.0 // indirect
 	cloud.google.com/go/auth/oauth2adapt v0.2.8 // indirect
 	cloud.google.com/go/compute/metadata v0.6.0 // indirect
-	cloud.google.com/go/iam v1.4.1 // indirect
+	cloud.google.com/go/iam v1.5.0 // indirect
 	cloud.google.com/go/kms v1.21.1 // indirect
 	dario.cat/mergo v1.0.1 // indirect
 	filippo.io/edwards25519 v1.1.0 // indirect
