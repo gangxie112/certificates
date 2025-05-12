@@ -1,6 +1,7 @@
 module github.com/smallstep/certificates
 
-go 1.21
+go 1.23.0
+
 toolchain go1.24.1
 
 require (
@@ -14,7 +15,7 @@ require (
 	github.com/go-jose/go-jose/v3 v3.0.4
 	github.com/golang/mock v1.6.0
 	github.com/google/go-cmp v0.7.0
-	github.com/google/go-tpm v0.9.4
+	github.com/google/go-tpm v0.9.5
 	github.com/google/uuid v1.6.0
 	github.com/googleapis/gax-go/v2 v2.14.1
 	github.com/hashicorp/vault/api v1.16.0
