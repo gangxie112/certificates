@@ -35,48 +35,48 @@ require (
 	github.com/stretchr/testify v1.10.0
 	github.com/urfave/cli v1.22.17
 	go.step.sm/cli-utils v0.9.0
-	go.step.sm/crypto v0.69.0
+	go.step.sm/crypto v0.70.0
 	go.step.sm/linkedca v0.22.2
 	golang.org/x/crypto v0.41.0
 	golang.org/x/exp v0.0.0-20250620022241-b7579e27df2b
 	golang.org/x/net v0.43.0
-	google.golang.org/api v0.246.0
+	google.golang.org/api v0.247.0
 	google.golang.org/grpc v1.74.2
 	google.golang.org/protobuf v1.36.7
 )
 
 require (
 	cloud.google.com/go v0.120.0 // indirect
-	cloud.google.com/go/auth v0.16.3 // indirect
+	cloud.google.com/go/auth v0.16.4 // indirect
 	cloud.google.com/go/auth/oauth2adapt v0.2.8 // indirect
-	cloud.google.com/go/compute/metadata v0.7.0 // indirect
+	cloud.google.com/go/compute/metadata v0.8.0 // indirect
 	cloud.google.com/go/iam v1.5.2 // indirect
 	cloud.google.com/go/kms v1.22.0 // indirect
 	dario.cat/mergo v1.0.1 // indirect
 	filippo.io/edwards25519 v1.1.0 // indirect
 	github.com/AndreasBriese/bbloom v0.0.0-20190825152654-46b345b51c96 // indirect
 	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.18.2 // indirect
-	github.com/Azure/azure-sdk-for-go/sdk/azidentity v1.10.1 // indirect
+	github.com/Azure/azure-sdk-for-go/sdk/azidentity v1.11.0 // indirect
 	github.com/Azure/azure-sdk-for-go/sdk/internal v1.11.2 // indirect
-	github.com/Azure/azure-sdk-for-go/sdk/keyvault/azkeys v0.10.0 // indirect
-	github.com/Azure/azure-sdk-for-go/sdk/keyvault/internal v0.7.1 // indirect
+	github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azkeys v1.4.0 // indirect
+	github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/internal v1.2.0 // indirect
 	github.com/AzureAD/microsoft-authentication-library-for-go v1.4.2 // indirect
 	github.com/Masterminds/goutils v1.1.1 // indirect
 	github.com/Masterminds/semver/v3 v3.3.0 // indirect
 	github.com/ThalesIgnite/crypto11 v1.2.5 // indirect
-	github.com/aws/aws-sdk-go-v2 v1.37.2 // indirect
-	github.com/aws/aws-sdk-go-v2/config v1.30.3 // indirect
-	github.com/aws/aws-sdk-go-v2/credentials v1.18.3 // indirect
-	github.com/aws/aws-sdk-go-v2/feature/ec2/imds v1.18.2 // indirect
-	github.com/aws/aws-sdk-go-v2/internal/configsources v1.4.2 // indirect
-	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2 v2.7.2 // indirect
+	github.com/aws/aws-sdk-go-v2 v1.38.0 // indirect
+	github.com/aws/aws-sdk-go-v2/config v1.31.0 // indirect
+	github.com/aws/aws-sdk-go-v2/credentials v1.18.4 // indirect
+	github.com/aws/aws-sdk-go-v2/feature/ec2/imds v1.18.3 // indirect
+	github.com/aws/aws-sdk-go-v2/internal/configsources v1.4.3 // indirect
+	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2 v2.7.3 // indirect
 	github.com/aws/aws-sdk-go-v2/internal/ini v1.8.3 // indirect
 	github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding v1.13.0 // indirect
-	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.13.2 // indirect
-	github.com/aws/aws-sdk-go-v2/service/kms v1.43.0 // indirect
-	github.com/aws/aws-sdk-go-v2/service/sso v1.27.0 // indirect
-	github.com/aws/aws-sdk-go-v2/service/ssooidc v1.32.0 // indirect
-	github.com/aws/aws-sdk-go-v2/service/sts v1.36.0 // indirect
+	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.13.3 // indirect
+	github.com/aws/aws-sdk-go-v2/service/kms v1.44.0 // indirect
+	github.com/aws/aws-sdk-go-v2/service/sso v1.28.0 // indirect
+	github.com/aws/aws-sdk-go-v2/service/ssooidc v1.33.0 // indirect
+	github.com/aws/aws-sdk-go-v2/service/sts v1.37.0 // indirect
 	github.com/aws/smithy-go v1.22.5 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cenkalti/backoff/v4 v4.3.0 // indirect
@@ -97,7 +97,7 @@ require (
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-piv/piv-go/v2 v2.4.0 // indirect
 	github.com/go-sql-driver/mysql v1.8.1 // indirect
-	github.com/golang-jwt/jwt/v5 v5.2.2 // indirect
+	github.com/golang-jwt/jwt/v5 v5.3.0 // indirect
 	github.com/golang/glog v1.2.5 // indirect
 	github.com/golang/protobuf v1.5.4 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
@@ -162,6 +162,6 @@ require (
 	golang.org/x/time v0.12.0 // indirect
 	google.golang.org/genproto v0.0.0-20250603155806-513f23925822 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20250603155806-513f23925822 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20250728155136-f173205681a0 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20250804133106-a7a43d27e69b // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
