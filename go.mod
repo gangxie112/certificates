@@ -1,6 +1,6 @@
 module github.com/smallstep/certificates
 
-go 1.23.0
+go 1.24.0
 
 toolchain go1.24.1
 
@@ -40,7 +40,7 @@ require (
 	golang.org/x/crypto v0.41.0
 	golang.org/x/exp v0.0.0-20250620022241-b7579e27df2b
 	golang.org/x/net v0.43.0
-	google.golang.org/api v0.248.0
+	google.golang.org/api v0.249.0
 	google.golang.org/grpc v1.75.0
 	google.golang.org/protobuf v1.36.8
 )
