@@ -39,7 +39,7 @@ require (
 	go.step.sm/linkedca v0.22.2
 	golang.org/x/crypto v0.42.0
 	golang.org/x/exp v0.0.0-20250620022241-b7579e27df2b
-	golang.org/x/net v0.43.0
+	golang.org/x/net v0.44.0
 	google.golang.org/api v0.249.0
 	google.golang.org/grpc v1.75.1
 	google.golang.org/protobuf v1.36.8
