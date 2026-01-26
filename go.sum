@@ -323,8 +323,8 @@ github.com/shurcooL/sanitized_anchor_name v1.0.0 h1:PdmoCO6wvbs+7yrJyMORt4/BmY5I
 github.com/shurcooL/sanitized_anchor_name v1.0.0/go.mod h1:1NzhyTcUVG4SuEtjjoZeVRXNmyL/1OwPU0+IJeTBvfc=
 github.com/sirupsen/logrus v1.9.4 h1:TsZE7l11zFCLZnZ+teH4Umoq5BhEIfIzfRDZ1Uzql2w=
 github.com/sirupsen/logrus v1.9.4/go.mod h1:ftWc9WdOfJ0a92nsE2jF5u5ZwH8Bv2zdeOC42RjbV2g=
-github.com/slackhq/nebula v1.10.1 h1:91EzIXluY2idloI5a+NaTcgbO8+6fgIcH6AwZWYJEsc=
-github.com/slackhq/nebula v1.10.1/go.mod h1:7udUpGSCM5cWmShk6gmRo9ppv9pD3WSx+WLBPjOMz8M=
+github.com/slackhq/nebula v1.10.2 h1:gaeEEcJ7thW0Yirp59H1wND246YYj3S9RXV059loJnw=
+github.com/slackhq/nebula v1.10.2/go.mod h1:UloLC5/KuYkNyxD4qki4Zl3t/Wh78aTA5cE8xyyZR4c=
 github.com/smallstep/assert v0.0.0-20200723003110-82e2b9b3b262 h1:unQFBIznI+VYD1/1fApl1A+9VcBk+9dcqGfnePY87LY=
 github.com/smallstep/assert v0.0.0-20200723003110-82e2b9b3b262/go.mod h1:MyOHs9Po2fbM1LHej6sBUT8ozbxmMOFG+E+rx/GSGuc=
 github.com/smallstep/go-attestation v0.4.4-0.20241119153605-2306d5b464ca h1:VX8L0r8vybH0bPeaIxh4NQzafKQiqvlOn8pmOXbFLO4=
