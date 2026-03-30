@@ -18,7 +18,7 @@ require (
 	github.com/googleapis/gax-go/v2 v2.19.0
 	github.com/hashicorp/vault/api v1.22.0
 	github.com/hashicorp/vault/api/auth/approle v0.12.0
-	github.com/hashicorp/vault/api/auth/kubernetes v0.10.0
+	github.com/hashicorp/vault/api/auth/kubernetes v0.12.0
 	github.com/newrelic/go-agent/v3 v3.42.0
 	github.com/pkg/errors v0.9.1
 	github.com/prometheus/client_golang v1.23.2
