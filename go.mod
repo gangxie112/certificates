@@ -26,14 +26,14 @@ require (
 	github.com/sirupsen/logrus v1.9.4
 	github.com/slackhq/nebula v1.10.3
 	github.com/smallstep/assert v0.0.0-20200723003110-82e2b9b3b262
-	github.com/smallstep/go-attestation v0.4.4-0.20241119153605-2306d5b464ca
+	github.com/smallstep/go-attestation v0.4.9
 	github.com/smallstep/nosql v0.8.0
 	github.com/smallstep/pkcs7 v0.2.1
 	github.com/smallstep/scep v0.0.0-20231024192529-aee96d7ad34d
 	github.com/stretchr/testify v1.11.1
 	github.com/urfave/cli v1.22.17
 	go.step.sm/cli-utils v0.9.0
-	go.step.sm/crypto v0.77.2
+	go.step.sm/crypto v0.77.7
 	go.step.sm/linkedca v0.22.2
 	golang.org/x/crypto v0.50.0
 	golang.org/x/exp v0.0.0-20251023183803-a4bb9ffd2546
@@ -49,7 +49,7 @@ require (
 	cloud.google.com/go/auth/oauth2adapt v0.2.8 // indirect
 	cloud.google.com/go/compute/metadata v0.9.0 // indirect
 	cloud.google.com/go/iam v1.7.0 // indirect
-	cloud.google.com/go/kms v1.26.0 // indirect
+	cloud.google.com/go/kms v1.28.0 // indirect
 	dario.cat/mergo v1.0.2 // indirect
 	filippo.io/bigmod v0.1.0 // indirect
 	filippo.io/edwards25519 v1.2.0 // indirect
@@ -63,21 +63,21 @@ require (
 	github.com/Masterminds/goutils v1.1.1 // indirect
 	github.com/Masterminds/semver/v3 v3.3.0 // indirect
 	github.com/ThalesIgnite/crypto11 v1.2.5 // indirect
-	github.com/aws/aws-sdk-go-v2 v1.41.4 // indirect
-	github.com/aws/aws-sdk-go-v2/config v1.32.12 // indirect
-	github.com/aws/aws-sdk-go-v2/credentials v1.19.12 // indirect
-	github.com/aws/aws-sdk-go-v2/feature/ec2/imds v1.18.20 // indirect
-	github.com/aws/aws-sdk-go-v2/internal/configsources v1.4.20 // indirect
-	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2 v2.7.20 // indirect
+	github.com/aws/aws-sdk-go-v2 v1.41.6 // indirect
+	github.com/aws/aws-sdk-go-v2/config v1.32.14 // indirect
+	github.com/aws/aws-sdk-go-v2/credentials v1.19.14 // indirect
+	github.com/aws/aws-sdk-go-v2/feature/ec2/imds v1.18.21 // indirect
+	github.com/aws/aws-sdk-go-v2/internal/configsources v1.4.22 // indirect
+	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2 v2.7.22 // indirect
 	github.com/aws/aws-sdk-go-v2/internal/ini v1.8.6 // indirect
 	github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding v1.13.7 // indirect
-	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.13.20 // indirect
-	github.com/aws/aws-sdk-go-v2/service/kms v1.50.3 // indirect
-	github.com/aws/aws-sdk-go-v2/service/signin v1.0.8 // indirect
-	github.com/aws/aws-sdk-go-v2/service/sso v1.30.13 // indirect
-	github.com/aws/aws-sdk-go-v2/service/ssooidc v1.35.17 // indirect
-	github.com/aws/aws-sdk-go-v2/service/sts v1.41.9 // indirect
-	github.com/aws/smithy-go v1.24.2 // indirect
+	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.13.21 // indirect
+	github.com/aws/aws-sdk-go-v2/service/kms v1.50.5 // indirect
+	github.com/aws/aws-sdk-go-v2/service/signin v1.0.9 // indirect
+	github.com/aws/aws-sdk-go-v2/service/sso v1.30.15 // indirect
+	github.com/aws/aws-sdk-go-v2/service/ssooidc v1.35.19 // indirect
+	github.com/aws/aws-sdk-go-v2/service/sts v1.41.10 // indirect
+	github.com/aws/smithy-go v1.25.0 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cenkalti/backoff/v4 v4.3.0 // indirect
 	github.com/cespare/xxhash v1.1.0 // indirect
