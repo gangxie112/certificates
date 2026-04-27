@@ -26,7 +26,7 @@ require (
 	github.com/sirupsen/logrus v1.9.4
 	github.com/slackhq/nebula v1.10.3
 	github.com/smallstep/assert v0.0.0-20200723003110-82e2b9b3b262
-	github.com/smallstep/go-attestation v0.4.4-0.20241119153605-2306d5b464ca
+	github.com/smallstep/go-attestation v0.4.9
 	github.com/smallstep/nosql v0.8.0
 	github.com/smallstep/pkcs7 v0.2.1
 	github.com/smallstep/scep v0.0.0-20231024192529-aee96d7ad34d

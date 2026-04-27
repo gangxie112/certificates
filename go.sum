@@ -329,8 +329,8 @@ github.com/slackhq/nebula v1.10.3 h1:EstYj8ODEcv6T0R9X5BVq1zgWZnyU5gtPzk99QF1PMU
 github.com/slackhq/nebula v1.10.3/go.mod h1:IL5TUQm4x9IFx2kCKPYm1gP47pwd5b8QGnnBH2RHnvs=
 github.com/smallstep/assert v0.0.0-20200723003110-82e2b9b3b262 h1:unQFBIznI+VYD1/1fApl1A+9VcBk+9dcqGfnePY87LY=
 github.com/smallstep/assert v0.0.0-20200723003110-82e2b9b3b262/go.mod h1:MyOHs9Po2fbM1LHej6sBUT8ozbxmMOFG+E+rx/GSGuc=
-github.com/smallstep/go-attestation v0.4.4-0.20241119153605-2306d5b464ca h1:VX8L0r8vybH0bPeaIxh4NQzafKQiqvlOn8pmOXbFLO4=
-github.com/smallstep/go-attestation v0.4.4-0.20241119153605-2306d5b464ca/go.mod h1:vNAduivU014fubg6ewygkAvQC0IQVXqdc8vaGl/0er4=
+github.com/smallstep/go-attestation v0.4.9 h1:/fVmzB8A8tk7B2PCGPlszWzyl/GDcEQbynqcg2PMaZ0=
+github.com/smallstep/go-attestation v0.4.9/go.mod h1:vNAduivU014fubg6ewygkAvQC0IQVXqdc8vaGl/0er4=
 github.com/smallstep/nosql v0.8.0 h1:FBTCUfKPmWYbrozW+RBKu+fnvbn+zr5rVli/XB4Jp4A=
 github.com/smallstep/nosql v0.8.0/go.mod h1:5dUpNotHLHhOUapP0PLBVVfp3tG1DFC31VRccg+Cqwo=
 github.com/smallstep/pkcs7 v0.0.0-20231024181729-3b98ecc1ca81/go.mod h1:SoUAr/4M46rZ3WaLstHxGhLEgoYIDRqxQEXLOmOEB0Y=
