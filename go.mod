@@ -3,7 +3,7 @@ module github.com/smallstep/certificates
 go 1.25.8
 
 require (
-	cloud.google.com/go/longrunning v1.1.0
+	cloud.google.com/go/longrunning v1.2.0
 	cloud.google.com/go/security v1.25.0
 	github.com/Masterminds/sprig/v3 v3.3.0
 	github.com/dgraph-io/badger v1.6.2
