@@ -4,7 +4,7 @@ go 1.25.8
 
 require (
 	cloud.google.com/go/longrunning v1.2.0
-	cloud.google.com/go/security v1.25.0
+	cloud.google.com/go/security v1.26.0
 	github.com/Masterminds/sprig/v3 v3.3.0
 	github.com/dgraph-io/badger v1.6.2
 	github.com/dgraph-io/badger/v2 v2.2007.4
