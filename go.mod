@@ -28,7 +28,7 @@ require (
 	github.com/smallstep/assert v0.0.0-20200723003110-82e2b9b3b262
 	github.com/smallstep/go-attestation v0.4.9
 	github.com/smallstep/nosql v0.8.0
-	github.com/smallstep/pkcs7 v0.2.1
+	github.com/smallstep/pkcs7 v0.2.2
 	github.com/smallstep/scep v0.0.0-20231024192529-aee96d7ad34d
 	github.com/stretchr/testify v1.11.1
 	github.com/urfave/cli v1.22.17
