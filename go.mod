@@ -1,6 +1,6 @@
 module github.com/smallstep/certificates
 
-go 1.25.8
+go 1.26.0
 
 require (
 	cloud.google.com/go/longrunning v1.2.0
@@ -24,7 +24,7 @@ require (
 	github.com/prometheus/client_golang v1.24.1
 	github.com/rs/xid v1.6.0
 	github.com/sirupsen/logrus v1.9.4
-	github.com/slackhq/nebula v1.10.3
+	github.com/slackhq/nebula v1.11.0
 	github.com/smallstep/assert v0.0.0-20200723003110-82e2b9b3b262
 	github.com/smallstep/go-attestation v0.4.9
 	github.com/smallstep/nosql v0.8.0
@@ -127,7 +127,7 @@ require (
 	github.com/mattn/go-colorable v0.1.14 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/mgutz/ansi v0.0.0-20200706080929-d51e80ef957d // indirect
-	github.com/miekg/pkcs11 v1.1.2-0.20231115102856-9078ad6b9d4b // indirect
+	github.com/miekg/pkcs11 v1.1.2 // indirect
 	github.com/mitchellh/copystructure v1.2.0 // indirect
 	github.com/mitchellh/go-homedir v1.1.0 // indirect
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
