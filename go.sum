@@ -338,8 +338,8 @@ github.com/smallstep/go-attestation v0.4.9/go.mod h1:vNAduivU014fubg6ewygkAvQC0I
 github.com/smallstep/nosql v0.8.0 h1:FBTCUfKPmWYbrozW+RBKu+fnvbn+zr5rVli/XB4Jp4A=
 github.com/smallstep/nosql v0.8.0/go.mod h1:5dUpNotHLHhOUapP0PLBVVfp3tG1DFC31VRccg+Cqwo=
 github.com/smallstep/pkcs7 v0.0.0-20231024181729-3b98ecc1ca81/go.mod h1:SoUAr/4M46rZ3WaLstHxGhLEgoYIDRqxQEXLOmOEB0Y=
-github.com/smallstep/pkcs7 v0.2.2 h1:IqCilwwjs7Y+N73ses2XymBPb/wWVctbROAElWAZU7o=
-github.com/smallstep/pkcs7 v0.2.2/go.mod h1:7STkdKhZaZe4xNEXTtY4j1NGeST1gYM4GA40kC5iqr8=
+github.com/smallstep/pkcs7 v0.2.3 h1:bhoQ3TeZmdoXTatcwxCbk+FMcdsyr0gYrrW2Xq2qr+s=
+github.com/smallstep/pkcs7 v0.2.3/go.mod h1:7STkdKhZaZe4xNEXTtY4j1NGeST1gYM4GA40kC5iqr8=
 github.com/smallstep/scep v0.0.0-20231024192529-aee96d7ad34d h1:06LUHn4Ia2X6syjIaCMNaXXDNdU+1N/oOHynJbWgpXw=
 github.com/smallstep/scep v0.0.0-20231024192529-aee96d7ad34d/go.mod h1:4d0ub42ut1mMtvGyMensjuHYEUpRrASvkzLEJvoRQcU=
 github.com/spaolacci/murmur3 v0.0.0-20180118202830-f09979ecbc72/go.mod h1:JwIasOWyU6f++ZhiEuf87xNszmSA2myDM2Kzu9HwQUA=
