@@ -19,7 +19,7 @@ require (
 	github.com/hashicorp/vault/api v1.23.0
 	github.com/hashicorp/vault/api/auth/approle v0.12.0
 	github.com/hashicorp/vault/api/auth/kubernetes v0.12.0
-	github.com/newrelic/go-agent/v3 v3.44.2
+	github.com/newrelic/go-agent/v3 v3.45.0
 	github.com/pkg/errors v0.9.1
 	github.com/prometheus/client_golang v1.24.1
 	github.com/rs/xid v1.6.0
@@ -104,6 +104,7 @@ require (
 	github.com/google/certificate-transparency-go v1.1.6 // indirect
 	github.com/google/go-tpm-tools v0.4.9 // indirect
 	github.com/google/go-tspi v0.3.0 // indirect
+	github.com/google/pprof v0.0.0-20260802141513-ef3492d7dac3 // indirect
 	github.com/google/s2a-go v0.1.10 // indirect
 	github.com/googleapis/enterprise-certificate-proxy v0.3.22 // indirect
 	github.com/hashicorp/errwrap v1.1.0 // indirect
