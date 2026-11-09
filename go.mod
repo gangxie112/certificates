@@ -1,6 +1,6 @@
 module github.com/smallstep/certificates
 
-go 1.26.0
+go 1.27.3
 
 require (
 	cloud.google.com/go/longrunning v1.4.1
@@ -24,7 +24,7 @@ require (
 	github.com/prometheus/client_golang v1.25.0
 	github.com/rs/xid v1.6.0
 	github.com/sirupsen/logrus v1.10.2
-	github.com/slackhq/nebula v1.11.2
+	github.com/slackhq/nebula v1.12.0
 	github.com/smallstep/assert v0.0.0-20200723003110-82e2b9b3b262
 	github.com/smallstep/go-attestation v0.4.9
 	github.com/smallstep/nosql v0.8.0
