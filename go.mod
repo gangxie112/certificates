@@ -29,7 +29,7 @@ require (
 	github.com/smallstep/go-attestation v0.4.9
 	github.com/smallstep/nosql v0.8.0
 	github.com/smallstep/pkcs7 v0.2.3
-	github.com/smallstep/scep v0.0.0-20231024192529-aee96d7ad34d
+	github.com/smallstep/scep v0.1.0
 	github.com/stretchr/testify v1.12.1
 	github.com/urfave/cli v1.22.17
 	go.step.sm/cli-utils v0.9.0
@@ -89,9 +89,6 @@ require (
 	github.com/dustin/go-humanize v1.0.1 // indirect
 	github.com/felixge/httpsnoop v1.1.0 // indirect
 	github.com/go-jose/go-jose/v4 v4.1.9 // indirect
-	github.com/go-kit/kit v0.13.0 // indirect
-	github.com/go-kit/log v0.2.1 // indirect
-	github.com/go-logfmt/logfmt v0.6.0 // indirect
 	github.com/go-logr/logr v1.4.4 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-piv/piv-go/v2 v2.6.0 // indirect
